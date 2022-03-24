@@ -5,8 +5,8 @@ const path = require('path');
 const router = express.Router();
 var Seat = require("./Seat");
 
-// mongoose.connect(process.env.DATABASE);
-mongoose.connect("mongodb://localhost/testdb");
+mongoose.connect(process.env.DATABASE);
+// mongoose.connect("mongodb://localhost/testdb");
 
 var input;
 
