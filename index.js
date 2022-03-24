@@ -5,7 +5,8 @@ const path = require('path');
 const router = express.Router();
 var Seat = require("./Seat");
 
-mongoose.connect(process.env.DATABASE);
+// mongoose.connect(process.env.DATABASE);
+mongoose.connect("mongodb://localhost/testdb");
 
 var input;
 
@@ -18,7 +19,12 @@ app.get("/", function (request, response){
 app.get("/bookseat", async function (request, response){
     input = request.query.seats;
     var result = "";
-    await check()
+    try{
+        await check()
+    }catch(e){
+        return e;
+    }
+    
 
     async function check()
 {
